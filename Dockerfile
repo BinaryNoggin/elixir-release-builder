@@ -13,7 +13,8 @@ RUN apt-get update && apt-get install -yq \
     libnss3-dev \
     libxss-dev \
     libasound2-dev \
-    git
+    git \
+    jq
 
 # setup erlang apt repo
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb; \
