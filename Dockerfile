@@ -1,5 +1,6 @@
-FROM ubuntu:16.04
-ENV ELIXIR_VERSION=1.9.4-otp-22
+FROM ubuntu:19.10
+ENV ELIXIR_VERSION=1.10.1-otp-22
+ENV DEBIAN_FRONTEND=noninteractive
 
 # get tools needed to build required tools
 RUN apt-get update && apt-get install -yq \
@@ -14,8 +15,8 @@ RUN apt-get update && apt-get install -yq \
     libasound2-dev
 
 # setup erlang apt repo
-RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb; \
-    dpkg -i --force-depends erlang-solutions_1.0_all.deb;
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb; \
+    dpkg -i --force-depends erlang-solutions_2.0_all.deb
 
 # setup nodejs apt repo
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
