@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-ENV ELIXIR_VERSION=1.9.4-otp-22
+ENV ELIXIR_VERSION=1.10.3-otp-22
 
 # get tools needed to build required tools
 RUN apt-get update && apt-get install -yq \
