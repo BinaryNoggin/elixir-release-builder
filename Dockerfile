@@ -1,5 +1,5 @@
-FROM ubuntu:19.10
-ENV ELIXIR_VERSION=1.10.3-otp-22
+FROM ubuntu:20.04
+ENV ELIXIR_VERSION=1.11.2-otp-22
 ENV DEBIAN_FRONTEND=noninteractive
 
 # get tools needed to build required tools
