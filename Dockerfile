@@ -1,9 +1,8 @@
 FROM ubuntu:20.04
 ENV ELIXIR_VERSION=1.11.3-otp-23
 
-# Set Timezone so TZ Info doesn't hault the build
+# so TZ Info doesn't hault the build
 ENV DEBIAN_FRONTEND="noninteractive"
-ENV TZ="America/Chicago"
 
 # get tools needed to build required tools
 RUN apt-get update && apt-get install -yq \
