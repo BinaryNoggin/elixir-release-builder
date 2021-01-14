@@ -1,5 +1,8 @@
-FROM ubuntu:16.04
-ENV ELIXIR_VERSION=1.10.3-otp-22
+FROM ubuntu:20.04
+ENV ELIXIR_VERSION=1.11.3-otp-23
+
+# so TZ Info doesn't hault the build
+ENV DEBIAN_FRONTEND="noninteractive"
 
 # get tools needed to build required tools
 RUN apt-get update && apt-get install -yq \
@@ -15,8 +18,8 @@ RUN apt-get update && apt-get install -yq \
     git
 
 # setup erlang apt repo
-RUN wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb; \
-    dpkg -i --force-depends erlang-solutions_1.0_all.deb;
+RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb; \
+    dpkg -i --force-depends erlang-solutions_2.0_all.deb
 
 # setup nodejs apt repo
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
@@ -28,9 +31,9 @@ RUN apt-get update && apt-get install -yq \
 
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
     locale-gen
-ENV LANG en_US.UTF-8  
-ENV LANGUAGE en_US:en  
-ENV LC_ALL en_US.UTF-8  
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
 
 # install elixir
 RUN wget https://repo.hex.pm/builds/elixir/v$ELIXIR_VERSION.zip && \
