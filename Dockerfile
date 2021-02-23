@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -yq \
     git
 
 RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH=/root/.cargo/bin:$PATH
 
 # setup erlang apt repo
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb; \
