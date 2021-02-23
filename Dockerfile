@@ -17,6 +17,8 @@ RUN apt-get update && apt-get install -yq \
     libasound2-dev \
     git
 
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+
 # setup erlang apt repo
 RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb; \
     dpkg -i --force-depends erlang-solutions_2.0_all.deb
