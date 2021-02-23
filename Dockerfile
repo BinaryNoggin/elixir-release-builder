@@ -22,7 +22,7 @@ RUN wget https://packages.erlang-solutions.com/erlang-solutions_2.0_all.deb; \
     dpkg -i --force-depends erlang-solutions_2.0_all.deb
 
 # setup nodejs apt repo
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 
 # install nodejs and erlang
 RUN apt-get update && apt-get install -yq \
