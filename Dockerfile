@@ -1,5 +1,5 @@
 FROM ubuntu:20.04
-ENV ELIXIR_VERSION=1.12.3-otp-24
+ENV ELIXIR_VERSION=1.13.0-otp-24
 
 # so TZ Info doesn't hault the build
 ENV DEBIAN_FRONTEND="noninteractive"
